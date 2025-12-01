@@ -1,0 +1,168 @@
+@use '../../styles/variables.scss' as *;
+
+.dataPrivacy {
+  padding: 80px $page-padding-desktop;
+  background: $color-white;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cards {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .card {
+    position: relative;
+    background: $color-black;
+    color: $color-white;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+
+      .cardGlow {
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      z-index: 2;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .cardTitle {
+      font-size: 20px;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cardDescription {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.6;
+      opacity: 0.9;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cardGlow {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      background: radial-gradient(
+        circle,
+        rgba($color-white, 0.15) 0%,
+        transparent 70%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      animation: glow 3s ease-in-out infinite;
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(10%, 10%);
+    }
+    50% {
+      transform: translate(-10%, 5%);
+    }
+    75% {
+      transform: translate(5%, -10%);
+    }
+  }
+
+  .bottomText {
+    margin-top: 48px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .dataPrivacy {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .dataPrivacy {
+    padding: 60px $page-padding-mobile;
+
+    .cards {
+      margin-top: 40px;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      padding: 24px;
+
+      &:hover {
+        transform: none;
+      }
+
+      .icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .cardTitle {
+        font-size: 18px;
+      }
+
+      .cardDescription {
+        font-size: 13px;
+      }
+    }
+
+    .bottomText {
+      margin-top: 32px;
+      
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+

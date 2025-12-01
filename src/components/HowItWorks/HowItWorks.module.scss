@@ -1,0 +1,155 @@
+@use '../../styles/variables.scss' as *;
+
+.howItWorks {
+  padding: 80px $page-padding-desktop;
+  background: $color-white;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .steps {
+    margin-top: 60px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .step {
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.4;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 72px) / 5); // Total: 3 inactive (1x) + 1 active (2x) = 5 units
+
+    &.active {
+      opacity: 1;
+      width: calc((100% - 72px) * 2 / 5); // 2 units = double width
+    }
+
+    .imageWrapper {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba($color-black, 0.5);
+
+      .image {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .stepTitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: $color-black;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .howItWorks {
+    .steps {
+      gap: 16px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      
+      &::-webkit-scrollbar {
+        height: 8px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: rgba($color-black, 0.1);
+        border-radius: 4px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: rgba($color-black, 0.3);
+        border-radius: 4px;
+      }
+    }
+
+    .step {
+      min-width: 200px;
+      
+      &.active {
+        min-width: 400px;
+      }
+    }
+  }
+}
+
+// Mobile-specific styles (separate component logic)
+.stepsMobile {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // min-height: 380px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.stepMobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  &.fadeOut {
+    opacity: 0;
+  }
+
+  &.fadeIn {
+    opacity: 1;
+  }
+}
+
+.imageWrapperMobile {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba($color-black, 0.12);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.imageMobile {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stepTitleMobile {
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  color: $color-black;
+  margin: 0;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .howItWorks {
+    padding: 60px $page-padding-mobile;
+  }
+}
+
