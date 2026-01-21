@@ -1,0 +1,46 @@
+@use '../../styles/variables.scss' as *;
+
+.sectionChip {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &.centered {
+    align-items: center;
+    text-align: center;
+  }
+
+  .chip {
+    display: inline-flex;
+    padding: 8px 16px;
+    border: 1px solid $color-black;
+    border-radius: 8px;
+    width: fit-content;
+
+    span {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .title {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .sectionChip {
+    gap: 12px;
+
+    .chip {
+      padding: 6px 12px;
+      
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,94 @@
+@use '../../styles/variables.scss' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-header;
+  padding: 20px $page-padding-desktop;
+  pointer-events: none;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $color-black;
+    border-radius: 20px;
+    padding: 16px;
+    pointer-events: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: $color-white;
+
+    img {
+      height: 24px;
+      width: auto;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+
+    a {
+      color: $color-white;
+      font-size: 14px;
+      font-weight: 400;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .waitlistBtn {
+    background: $color-white;
+    color: $color-black;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header {
+    padding: 12px $page-padding-mobile;
+
+    .container {
+      gap: 12px;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .logo {
+      img {
+        height: 20px;
+      }
+    }
+
+    .waitlistBtn {
+      padding: 8px 16px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+}
+
