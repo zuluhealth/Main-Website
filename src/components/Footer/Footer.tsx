@@ -31,9 +31,9 @@ export default function Footer() {
 
         <div className={styles.column}>
           {/* <Link href="/">Manifesto</Link> */}
-          <Link href="/our-mission">Our mission</Link>
           {/* <Link href="/">Privacy Policy</Link> */}
-          <Link href="/">Provider Access</Link>
+          <Link href="/providers">For Providers</Link>
+          <Link href="/products">Our Products</Link>
         </div>
 
         <div className={styles.column}>

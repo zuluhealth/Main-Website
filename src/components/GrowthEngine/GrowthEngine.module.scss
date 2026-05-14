@@ -1,0 +1,88 @@
+@use '../../styles/variables.scss' as *;
+
+.growthEngine {
+  padding: 120px $page-padding-desktop;
+  background: $color-black;
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro {
+    margin-top: 24px;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    color: rgba($color-white, 0.7);
+  }
+
+  .grid {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+
+  .card {
+    background: rgba($color-white, 0.05);
+    border: 1px solid rgba($color-white, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba($color-white, 0.7);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .growthEngine {
+    padding: 80px $page-padding-tablet;
+
+    .grid {
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .growthEngine {
+    padding: 60px $page-padding-mobile;
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+  }
+}

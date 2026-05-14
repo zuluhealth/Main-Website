@@ -102,7 +102,7 @@ export default function ScrollRevealText({ text, preview = false, enableReveal =
       </div>
       {preview && (
         <div className={styles.readMore}>
-          <a href="/our-mission">
+          <a href="/providers">
             Read more
             <img src="/icons/chevron.svg" alt="arrow" className={styles.chevron} />
           </a>

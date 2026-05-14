@@ -4,11 +4,12 @@ interface SectionChipProps {
   chip: string;
   title: string;
   centered?: boolean;
+  light?: boolean;
 }
 
-export default function SectionChip({ chip, title, centered = false }: SectionChipProps) {
+export default function SectionChip({ chip, title, centered = false, light = false }: SectionChipProps) {
   return (
-    <div className={`${styles.sectionChip} ${centered ? styles.centered : ''}`}>
+    <div className={`${styles.sectionChip} ${centered ? styles.centered : ''} ${light ? styles.light : ''}`}>
       <div className={styles.chip}>
         <span>{chip}</span>
       </div>

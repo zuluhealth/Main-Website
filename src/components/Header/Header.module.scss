@@ -59,6 +59,7 @@
     font-size: 14px;
     font-weight: 500;
     transition: opacity 0.2s ease;
+    white-space: nowrap;
 
     &:hover {
       opacity: 0.9;
@@ -71,24 +72,51 @@
     padding: 12px $page-padding-mobile;
 
     .container {
-      gap: 12px;
-    }
-
-    .nav {
-      display: none;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
     }
 
     .logo {
       img {
-        height: 20px;
+        height: 18px;
+      }
+    }
+
+    .nav {
+      gap: 14px;
+
+      a {
+        font-size: 12px;
       }
     }
 
     .waitlistBtn {
-      padding: 8px 16px;
+      padding: 8px 12px;
       font-size: 12px;
-      white-space: nowrap;
+      border-radius: 6px;
     }
   }
 }
 
+@media (max-width: 380px) {
+  .header {
+    .container {
+      gap: 8px;
+      padding: 8px 10px;
+    }
+
+    .nav {
+      gap: 10px;
+
+      a {
+        font-size: 11px;
+      }
+    }
+
+    .waitlistBtn {
+      padding: 7px 10px;
+      font-size: 11px;
+    }
+  }
+}

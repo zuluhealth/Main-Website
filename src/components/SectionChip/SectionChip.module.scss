@@ -28,6 +28,22 @@
     font-weight: 500;
     line-height: 1.2;
   }
+
+  &.light {
+    color: $color-white;
+
+    .chip {
+      border-color: $color-white;
+
+      span {
+        color: $color-white;
+      }
+    }
+
+    .title {
+      color: $color-white;
+    }
+  }
 }
 
 @media (max-width: $breakpoint-mobile) {
