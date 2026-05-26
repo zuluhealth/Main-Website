@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Header from '@/components/Header/Header';
 import Hero from '@/components/Hero/Hero';
 import HowItWorks from '@/components/HowItWorks/HowItWorks';
@@ -7,6 +8,12 @@ import DataPrivacy from '@/components/DataPrivacy/DataPrivacy';
 import JoinWaitlist from '@/components/JoinWaitlist/JoinWaitlist';
 import FAQ from '@/components/FAQ/FAQ';
 import Footer from '@/components/Footer/Footer';
+
+export const metadata: Metadata = {
+  other: {
+    'facebook-domain-verification': 'sflax1s7s9r3zrnh05070sz5j7vbdn',
+  },
+};
 
 const missionPreview = `Health shouldn't be something we only think about when it's too late. It should be something we understand, manage, and nurture every day clearly, calmly, and intelligently. The truth is, most people don't know what's really going on inside their bodies. Not because they don't care, but because the system makes it nearly impossible to know.`;
 
