@@ -1,7 +1,7 @@
 # Zulu production deployment
 
 This package preserves the approved Zulu website exactly and adapts it to the
-existing source-build deployment contract.
+existing source-build deployment contract..
 
 ## Build
 
