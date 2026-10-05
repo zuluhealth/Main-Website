@@ -1,0 +1,3 @@
+# Explicit routes for the two ZuluHealth app information pages.
+/support         /support/index.html         200
+/delete-account  /delete-account/index.html  200

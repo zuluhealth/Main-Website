@@ -1,0 +1,13 @@
+/* Scoped only to the advertising-consent controls. */
+.zulu-cookie-settings{appearance:none;border:0;background:none;color:inherit;font:inherit;text-align:left;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.zulu-cookie-panel{position:fixed;z-index:10000;right:20px;bottom:20px;box-sizing:border-box;width:min(520px,calc(100% - 40px));max-height:calc(100dvh - 40px);overflow:auto;padding:24px;background:#eef7ff;color:#14252a;border:1px solid #b5c7ce;border-radius:16px;box-shadow:0 12px 40px #14252a26;font-family:inherit;font-size:16px;line-height:1.45}
+.zulu-cookie-panel[hidden],.zulu-cookie-panel [hidden]{display:none!important}
+.zulu-cookie-panel h2{margin:0 0 10px;font-family:inherit;font-weight:600;font-size:22px;line-height:1.2;letter-spacing:normal}
+.zulu-cookie-panel p{margin:0 0 10px;font-size:16px;line-height:1.45;color:inherit}
+.zulu-cookie-panel a{color:inherit;text-decoration:underline;font-size:14px}
+.zulu-cookie-actions{display:flex;gap:10px;margin-top:18px}
+.zulu-cookie-actions button{flex:1;min-height:44px;padding:10px 14px;border:1px solid #14252a;border-radius:8px;background:#fff;color:#14252a;font-family:inherit;font-weight:500;font-size:15px;line-height:1.25;cursor:pointer}
+.zulu-cookie-actions button:hover{background:#deedf1}
+.zulu-cookie-close{display:block;margin:12px auto 0;padding:8px;border:0;background:none;color:inherit;text-decoration:underline;font:inherit;cursor:pointer}
+.zulu-cookie-panel button:focus-visible,.zulu-cookie-settings:focus-visible{outline:3px solid #377180;outline-offset:3px}
+@media(max-width:480px){.zulu-cookie-panel{right:12px;bottom:12px;width:calc(100% - 24px);padding:20px}.zulu-cookie-actions{flex-wrap:wrap}.zulu-cookie-actions button{flex-basis:100%}}
